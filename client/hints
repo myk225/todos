@@ -1,0 +1,24 @@
+let allRemoveBtns;
+
+allRemoveBtns=document.querySelectorAll(".remove");
+    
+    allRemoveBtns.forEach((elem,index)=>{
+        elem.addEventListener('click',async()=>{
+            let userId=localStorage.getItem('userId');
+            const todoId=elem.getAttribute('data-todoId');
+            const response=await fetch(`/todos/deleteTodo/${todoId}`,{
+                method:"DELETE",
+                headers:{
+                    "Content-Type": "application/json",
+                },
+                body:JSON.stringify({user_id:userId})
+            })
+            const res=await response.json();
+            console.log(res);
+            if(response.status==203){
+                fetchTodos();
+                alert(res.message);
+            }
+            alert(res.message);
+        })
+    })
