@@ -5,7 +5,7 @@ const allTodos=document.getElementById("allTodos");
 let allRemoveBtns;
 async function fetchTodos(){
     const userId=localStorage.getItem('userId');
-    const response=await fetch(`http://localhost:8000/todos/getTodos/${userId}`,{
+    const response=await fetch(`/todos/getTodos/${userId}`,{
         method:"GET",
     })
     const res=await response.json();
@@ -89,7 +89,7 @@ const addBtn=document.getElementById('addBtn');
 addBtn.addEventListener('click',async()=>{
     alert("adding")
     const userId=localStorage.getItem('userId');
-    const response=await fetch(`http://localhost:8000/todos/addTodo`,{
+    const response=await fetch(`/todos/addTodo`,{
         method:"POST",
         headers:{
             
