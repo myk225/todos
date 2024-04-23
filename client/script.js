@@ -2,7 +2,7 @@ console.log("hello i am index")
 
 console.log(window.location.href);
 
-if(window.location.href==="http://localhost:8000/app/index.html" || window.location.href==="http://localhost:8000/app/"  ){
+if(window.location.href==="https://todos-rqsj.onrender.com/app/index.html" || window.location.href==="https://todos-rqsj.onrender.com/app/"  ){
     if(localStorage.getItem('userId')){
         console.log("loggednin")
     }else{
